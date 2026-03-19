@@ -1,10 +1,9 @@
 ---
-import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-import Header from '../components/Header.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -16,42 +15,48 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<BaseHead title={title} description={description} />
 		<style>
 			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
 				width: 720px;
 				max-width: calc(100% - 2em);
 				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
+				padding: 3rem 0;
+			}
+			.prose {
+				color: var(--black);
 			}
 			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
+				margin-bottom: 3rem;
 				text-align: center;
-				line-height: 1;
+				line-height: 1.2;
 			}
 			.title h1 {
-				margin: 0 0 0.5em 0;
+				margin: 0 0 0.5rem 0;
+        font-size: 3rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
 			}
 			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
+				color: var(--gray);
+        font-family: ui-monospace, SFMono-Regular, monospace;
+        font-size: 1rem;
 			}
 			.last-updated-on {
 				font-style: italic;
 			}
+      .hero-image {
+        margin: 2rem 0 3rem;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+      }
+      .hero-image img {
+        display: block;
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+      }
+      @media (max-width: 720px) {
+        .title h1 { font-size: 2rem; }
+      }
 		</style>
 	</head>
 
@@ -59,9 +64,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<Header />
 		<main>
 			<article>
-				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
-				</div>
 				<div class="prose">
 					<div class="title">
 						<div class="date">
@@ -75,8 +77,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 							}
 						</div>
 						<h1>{title}</h1>
-						<hr />
+            <p style="font-size: 1.25rem; color: var(--gray); margin-top: 1rem;">{description}</p>
 					</div>
+          {heroImage && <div class="hero-image"><img src={heroImage} alt="" /></div>}
 					<slot />
 				</div>
 			</article>
