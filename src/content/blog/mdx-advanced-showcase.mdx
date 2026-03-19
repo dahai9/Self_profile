@@ -1,0 +1,42 @@
+---
+title: 'MDX 进阶: 在博文中使用自定义组件'
+description: '学会如何使用 Callout 组件来提升博文的阅读体验'
+pubDate: '2026-03-18'
+---
+
+import Callout from '../../components/Callout.astro';
+
+# 提升你的技术博客质量
+
+当你需要特别强调某些内容时，简单的 Markdown 可能不够。
+
+## 1. 蓝色提示 (Default)
+
+<Callout title="你知道吗?">
+  MDX 结合 Astro 组件，可以实现极其复杂的交互式教学。
+</Callout>
+
+## 2. 警告和危险提示
+
+<Callout type="warning" title="注意环境配置">
+  在运行此脚本之前，请确保你已经安装了 Node.js 22。
+</Callout>
+
+<Callout type="danger" title="操作不可逆">
+  执行 `rm -rf /` 之前请三思！
+</Callout>
+
+## 3. 成功反馈
+
+<Callout type="success" title="部署完成">
+  你的博客已经成功同步到 GitHub Pages。
+</Callout>
+
+### 代码与组件结合
+
+```javascript
+// 在 MDX 中导入 Astro 组件
+import Callout from '../../components/Callout.astro';
+```
+
+这种组合方式让你的“技术分享”和“点子分享”更具专业感。

@@ -1,0 +1,42 @@
+---
+interface Props {
+	type?: 'info' | 'warning' | 'danger' | 'success';
+	title?: string;
+}
+
+const { type = 'info', title } = Astro.props;
+
+const colors = {
+	info: { border: '#6366f1', bg: 'rgba(99, 102, 241, 0.1)' },
+	warning: { border: '#f59e0b', bg: 'rgba(245, 158, 11, 0.1)' },
+	danger: { border: '#ef4444', bg: 'rgba(239, 68, 68, 0.1)' },
+	success: { border: '#10b981', bg: 'rgba(16, 185, 129, 0.1)' },
+};
+
+const color = colors[type];
+---
+
+<div class="callout" style={`border-left-color: ${color.border}; background-color: ${color.bg};`}>
+	{title && <h5 class="callout-title">{title}</h5>}
+	<div class="callout-content">
+		<slot />
+	</div>
+</div>
+
+<style>
+	.callout {
+		padding: 1.25rem 1.5rem;
+		margin: 2rem 0;
+		border-left: 4px solid;
+		border-radius: 0 8px 8px 0;
+	}
+	.callout-title {
+		margin: 0 0 0.5rem 0;
+		font-size: 1.1rem;
+		font-weight: 700;
+	}
+	.callout-content {
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+</style>
