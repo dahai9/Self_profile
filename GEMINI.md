@@ -1,13 +1,13 @@
 # GEMINI.md - Project Instructions
 
 ## Project Overview
-**Self_profile** is a high-performance, minimalist technical blog built with **Astro 6** and **TypeScript**. It serves as a personal space for sharing technical deep dives and creative thoughts.
+**Sea_of_Bits** is a high-performance, minimalist technical blog built with **Astro 6** and **TypeScript**. It serves as a personal space for sharing technical deep dives and creative thoughts.
 
 ### Key Technologies
 - **Framework**: Astro (Static Site Generation)
 - **Content**: Markdown and MDX (`@astrojs/mdx`)
 - **Environment**: Nix Flakes (`flake.nix`) and `direnv`
-- **Deployment**: GitHub Pages (Base path: `/Self_profile`)
+- **Deployment**: GitHub Pages (Base path: `/Sea_of_Bits`)
 - **Styling**: Vanilla CSS for a clean, text-focused minimalist aesthetic.
 
 ---

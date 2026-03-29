@@ -91,14 +91,14 @@ const posts = (await getCollection('blog')).sort(
       <ul class="recent-posts">
         {posts.map(post => (
           <li class="post-entry">
-            <a href={`/Self_profile/blog/${post.id}/`}>
+            <a href={`/Sea_of_Bits/blog/${post.id}/`}>
               <div class="date"><FormattedDate date={post.data.pubDate} /></div>
               <h3 class="title">{post.data.title}</h3>
             </a>
           </li>
         ))}
       </ul>
-      <a href="/Self_profile/blog" class="view-all">View all posts →</a>
+      <a href="/Sea_of_Bits/blog" class="view-all">View all posts →</a>
 		</main>
 		<Footer />
 	</body>

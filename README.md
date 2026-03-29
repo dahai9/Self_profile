@@ -1,4 +1,4 @@
-# Dahai's Blog (Self_profile)
+# Dahai's Blog (Sea_of_Bits)
 
 A modern, high-performance blog built with **Astro**, **TypeScript**, and **Nix**.
 
@@ -8,7 +8,7 @@ A modern, high-performance blog built with **Astro**, **TypeScript**, and **Nix*
 - **Styling**: Minimal CSS (Bear Blog theme)
 - **Content**: Markdown & MDX support in `src/content/blog/`
 - **Environment**: Nix Flake with `direnv` support
-- **Deployment**: Automated via GitHub Actions to [GitHub Pages](https://dahai9.github.io/Self_profile/)
+- **Deployment**: Automated via GitHub Actions to [GitHub Pages](https://dahai9.github.io/Sea_of_Bits/)
 
 ## 🛠️ Development
 
@@ -35,7 +35,7 @@ nix develop
 ## 📦 Project Structure
 
 - `src/content/blog/`: Markdown/MDX blog posts
-- `astro.config.mjs`: Astro configuration (site: `https://dahai9.github.io`, base: `/Self_profile`)
+- `astro.config.mjs`: Astro configuration (site: `https://dahai9.github.io`, base: `/Sea_of_Bits`)
 - `flake.nix`: Nix environment configuration
 - `.github/workflows/deploy.yml`: GitHub Actions CI/CD pipeline
 
